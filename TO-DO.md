@@ -2,6 +2,7 @@
 
 ## Base de datos
 
+- [x] Write the press release
 - [] Crear la base de datos con la tabla
 - [] Agregar datos de ejemplo
 
