@@ -12,9 +12,11 @@
 
 <body>
     <h1>Base de datos: Estudiantes</h1>
-    <div class="tabla">
-        <table>
-            <tr>
+
+    <div class="container-tabla">
+        <table class="tabla">
+            <?php $tabla = 'SELECT * FROM informacion'; ?>
+            <tr class="encabezado-tabla">
                 <td>ID</td>
                 <td>Nombre</td>
                 <td>Apellido</td>
