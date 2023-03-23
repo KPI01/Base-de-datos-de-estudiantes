@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-tabla {
+    flex-basis: 100%;
+}
+
+h1 {
+    flex-basis: 100%;
+}
+
+.tabla > .encabezado {
+    display: flex;
+}
+
+.tabla > .cuerpo {
+    display: flex;
+}
+
