@@ -2,8 +2,8 @@
 
 ## Base de datos
 
-- [ ] Crear la base de datos con la tabla
-- [ ] Agregar datos de ejemplo
+- [X] Crear la base de datos con la tabla
+- [X] Agregar datos de ejemplo
 
 ## Pagina
 
