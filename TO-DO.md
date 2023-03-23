@@ -7,9 +7,9 @@
 
 ## Pagina
 
-- [ ] Crear la pagina web donde se mostrara la tabla
-- [ ] Estructurarla correctamente
-- [ ] Agregar estilos
+- [X] Crear la pagina web donde se mostrara la tabla
+- [X] Estructurarla correctamente
+- [X] Agregar estilos
 - [ ] Crear los botones de las acciones:
     - [ ] Insertar
     - [ ] Modificar
