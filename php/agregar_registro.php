@@ -41,6 +41,10 @@ $conexion = new mysqli('localhost', 'root', '', 'estudiantes');
                 <input type="text" name="agg-ciudad" class="input ciudad" value="<?php if (isset($_POST['agg-ciudad'])) echo $_POST['agg-ciudad'] ?>">
             </div>
             <div class="section">
+                <label class="label-form agg">Teléfono:</label>
+                <input type="text" name="agg-tlfn" class="input telefono" value="<?php if (isset($_POST['agg-tlfn'])) echo $_POST['agg-tlfn'] ?>">
+            </div>
+            <div class="section">
                 <label class="label-form agg">Correo:</label>
                 <input type="text" name="agg-correo" class="input correo" value="<?php if (isset($_POST['agg-correo'])) echo $_POST['agg-correo'] ?>">
             </div>
@@ -67,14 +71,15 @@ $conexion = new mysqli('localhost', 'root', '', 'estudiantes');
             $nombre = $_POST['agg-nombre'] ?? null;
             $apellido = $_POST['agg-apellido'] ?? null;
             $ciudad = $_POST['agg-ciudad'] ?? null;
+            $telefono = $_POST['agg-tlfn'] ?? null;
             $correo = $_POST['agg-correo'] ?? null;
             $carrera = $_POST['agg-carrera'] ?? null;
 
             //Se validan los datos
-            $datos_valid = check_datos($ci, $nombre, $apellido, $ciudad, $correo, $carrera);
+            $datos_valid = check_datos($ci, $nombre, $apellido, $ciudad, $telefono, $correo, $carrera);
 
             if ($datos_valid) {
-                $query_insert = "INSERT INTO `informacion`(`id`,`cedula`,`nombre`,`apellido`,`ciudad`,`correo`,`carrera`) VALUES ('$id','$ci','$nombre','$apellido','$ciudad','$correo','$carrera')";
+                $query_insert = "INSERT INTO `informacion`(`id`,`cedula`,`nombre`,`apellido`,`ciudad`,`telefono`,`correo`,`carrera`) VALUES ('$id','$ci','$nombre','$apellido','$ciudad','$telefono','$correo','$carrera')";
 
                 $conexion->query($query_insert);
 

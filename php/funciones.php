@@ -1,5 +1,5 @@
 <?php
-function check_datos($ci, $nombre, $apellido, $ciudad, $correo, $carrera)
+function check_datos($ci, $nombre, $apellido, $ciudad, $telefono, $correo, $carrera)
 {
 
     //Comprobacion cedula
@@ -55,6 +55,21 @@ function check_datos($ci, $nombre, $apellido, $ciudad, $correo, $carrera)
         $ciudad_valid = true;
     }
 
+    //Comprobacion telefono
+    if (empty($telefono)) {
+        echo '<div class="msg-error">Error: El teléfono no puede estar vacía.</div>';
+        $tlfn_valid = false;
+    } elseif (!is_numeric($telefono)) {
+        echo '<div class="msg-error">Error: El teléfono deben ser sólo números.</div>';
+        $tlfn_valid = false;
+    } elseif (strlen($telefono)>=13) {
+        echo '<div class="msg-error">Error: El teléfono no puede exceder los 13 caracteres.</div>';
+        $tlfn_valid = false;
+    } else {
+        $tlfn_valid = true;
+    }
+      
+
     //Comprobacion correo
     if (empty($correo)) {
         echo '<div class="msg-error">Error: El correo no puede estar vacío.</div>';
@@ -81,7 +96,7 @@ function check_datos($ci, $nombre, $apellido, $ciudad, $correo, $carrera)
     }
 
      //Comprobar si los datos estan correctos para insertar en la base de datos
-     if ($ci_valid && $nombre_valid && $apellido_valid && $ciudad_valid && $correo_valid && $carrera_valid) {
+     if ($ci_valid && $nombre_valid && $apellido_valid && $ciudad_valid && $tlfn_valid && $correo_valid && $carrera_valid) {
         return true;
      } else {
         return false;
@@ -143,6 +158,21 @@ function check_dato($tipo, $valor){
                     return false;
                 } elseif (strlen($valor) > 50) {
                     echo '<div class="msg-error">Error: La ciudad no puede superar los 50 caracteres.</div>';
+                    return false;
+                } else {
+                    return true;
+                }
+                break;
+
+            case 'telefono':
+                if (empty($valor)) {
+                    echo '<div class="msg-error">Error: El teléfono no puede estar vacía.</div>';
+                    return false;
+                } elseif (!is_numeric($valor)) {
+                    echo '<div class="msg-error">Error: El teléfono deben ser sólo números.</div>';
+                    return false;
+                } elseif (strlen($valor)>=13) {
+                    echo '<div class="msg-error">Error: El teléfono no puede exceder los 13 caracteres.</div>';
                     return false;
                 } else {
                     return true;

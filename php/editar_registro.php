@@ -38,12 +38,13 @@
 
                 while ($registro = $query_buscar->fetch_object()) {
                     echo '<input type="hidden" name="edit-id" value="' . $registro->id . '" class="registro">
-                        <label class="label-form edit">Cédula:</label><input name="edit-ci" class="input edit" value="' . $registro->cedula . '">
-                        <label class="label-form edit">Nombre:</label><input name="edit-nombre"class="input edit" value="' . $registro->nombre . '">
-                        <label class="label-form edit">Apellido:</label><input name="edit-apellido" class="input edit" value="' . $registro->apellido . '">
-                        <label class="label-form edit">Ciudad:</label><input name="edit-ciudad" class="input edit" value="' . $registro->ciudad . '">
-                        <label class="label-form edit">Correo:</label><input name="edit-correo" class="input edit" value="' . $registro->correo . '">
-                        <label class="label-form edit">Carrera:</label><input name="edit-carrera" class="input edit" value="' . $registro->carrera . '">';
+                        <div class="section"><label class="label-form edit">Cédula:</label><input name="edit-ci" class="input edit" value="' . $registro->cedula . '"></div><div class="section">
+                        <label class="label-form edit">Nombre:</label><input name="edit-nombre"class="input edit" value="' . $registro->nombre . '"></div><div class="section">
+                        <label class="label-form edit">Apellido:</label><input name="edit-apellido" class="input edit" value="' . $registro->apellido . '"></div><div class="section">
+                        <label class="label-form edit">Ciudad:</label><input name="edit-ciudad" class="input edit" value="' . $registro->ciudad . '"></div><div class="section">
+                        <label class="label-form edit">Teléfono:</label><input name="edit-tlfn" class="input edit" value="'.$registro->telefono.'"></div><div class="section">
+                        <label class="label-form edit">Correo:</label><input name="edit-correo" class="input edit" value="' . $registro->correo . '"></div><div class="section">
+                        <label class="label-form edit">Carrera:</label><input name="edit-carrera" class="input edit" value="' . $registro->carrera . '"></div>';
                 }
             }
             ?>
@@ -61,14 +62,15 @@
             $nombre = $_POST['edit-nombre'] ?? null;
             $apellido = $_POST['edit-apellido'] ?? null;
             $ciudad = $_POST['edit-ciudad'] ?? null;
+            $telefono = $_POST['edit-tlfn'] ?? null;
             $correo = $_POST['edit-correo'] ?? null;
             $carrera = $_POST['edit-carrera'] ?? null;
 
             //Comprobar los datos
-            $datos_valid = check_datos($ci, $nombre, $apellido, $ciudad, $correo, $carrera);
+            $datos_valid = check_datos($ci, $nombre, $apellido, $ciudad, $telefono, $correo, $carrera);
 
             if ($datos_valid) {
-                $query = "UPDATE `informacion` SET `cedula`='$ci', `nombre`='$nombre', `apellido`='$apellido', `ciudad`='$ciudad', `correo`='$correo', `carrera`='$carrera' WHERE `id`='$id'";
+                $query = "UPDATE `informacion` SET `cedula`='$ci', `nombre`='$nombre', `apellido`='$apellido', `ciudad`='$ciudad', `telefono`='$telefono', `correo`='$correo', `carrera`='$carrera' WHERE `id`='$id'";
 
                 $conexion->query($query);
 

@@ -24,6 +24,7 @@
                 <option value="nombre" class="opcion-key">Nombre</option>
                 <option value="apellido" class="opcion-key">Apellido</option>
                 <option value="ciudad" class="opcion-key">Ciudad</option>
+                <option value="telefono" class="opcion-key">Teléfono</option>
                 <option value="correo" class="opcion-key">Correo</option>
                 <option value="carrera" class="opcion-key">Carrera</option>
             </select>
@@ -60,6 +61,7 @@
                     <th class="encabezado__columna">Nombre</th>
                     <th class="encabezado__columna">Apellido</th>
                     <th class="encabezado__columna">Ciudad</th>
+                    <th class="encabezado__columna">Teléfono</th>
                     <th class="encabezado__columna">Correo</th>
                     <th class="encabezado__columna">Carrera</th>
                     <th class="encabezado__columna der">Opciones</th>
@@ -76,6 +78,7 @@
                     <td class="dato__registro">' . $registro->nombre . '</td>
                     <td class="dato__registro">' . $registro->apellido . '</td>
                     <td class="dato__registro">' . $registro->ciudad . '</td>
+                    <td class="dato__registro">' . $registro->telefono . '</td>
                     <td class="dato__registro">' . $registro->correo . '</td>
                     <td class="dato__registro">' . $registro->carrera . '</td>
                     <td class="dato__opciones">
