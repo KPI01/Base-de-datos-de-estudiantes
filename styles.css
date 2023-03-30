@@ -1,0 +1,169 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f1f1f1;
+    display: flex;
+    max-height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    flex-wrap: wrap;
+    gap: 5vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-titulo {
+    flex-basis: 100%;
+}
+.container-titulo > h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.container-btns {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btn {
+    text-align: center;
+    text-decoration: none;
+    max-height: 100%;
+    padding: .75rem 1rem;
+    color: #000;
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px #00000031;
+    cursor: pointer;
+}
+a {
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+.add {
+    background-color: #16c447;
+    padding: .75rem 2rem;
+}
+.srch {
+    background-color: #919191;
+}
+.btn.buscar {
+    background-color: #e4e4e4;
+}
+
+.container-tabla {
+    flex-basis:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 95vw;
+}
+.tabla {
+    border: 0;
+    border-style: none;
+}
+.tabla > thead > tr > th{
+    background-color: #0c0a38;
+    color: #fff;
+    padding: .5rem 1.5rem;
+    max-width: 100%;
+}
+.tabla > thead > tr > .izq {
+    border-top-left-radius: 20px;
+}
+.tabla > thead > tr > .der {
+    border-top-right-radius: 20px;
+}
+.registro {
+    text-align: center;
+    background-color: #e6e4e4;
+}
+.registro > td {
+    padding: .3rem .75rem;
+}
+.dato__opciones {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.container-form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.container-form > h1 {
+    text-align: center;
+}
+form {
+    margin: 1rem 0 0 0;
+    justify-self: center;
+    align-self: center;
+    width: 30vw;
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color:#444444;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 3px 3px 5px #0000007b;
+}
+form > .section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form > .section > label {
+    margin-right: .5rem;
+}
+form > .ci {
+    width: 12ch;
+}
+form > .nombre {
+    width: 25ch;
+}
+form > .apellido {
+    width: 25ch;
+}
+form > .ciudad {
+    width: 35ch;
+}
+form > .correo {
+    width: 35ch;
+}
+form > .carrera {
+    width: 35ch;
+}
+form > .btn {
+    border: none;
+    font-weight: bold;
+}
+input, select {
+    border-radius: 5px;
+    border: none;
+    padding: 3px;
+}
+
+.msg-error {
+    color: rgb(255, 48, 48);
+    background-color: #e4e4e4;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #00000031;
+}
+
+.btn.volver {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    background-color: #444444;
+    color: #fff;
+}
